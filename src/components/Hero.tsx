@@ -41,7 +41,7 @@ export function Hero() {
           <Stat label="Max supply"    value="100,000,000" unit="AURX" />
           <Stat label="Block reward"  value="100" unit="AURX / block" />
           <Stat label="Wallet cap"    value="1,000" unit="AURX / wallet" />
-          <Stat label="Claim fee"     value="0.0001" unit="ETH · routed to dev" />
+          <Stat label="Claim fee"     value="0.0001" />
         </div>
 
         <div className="mt-8 flex flex-wrap items-center gap-2 mono text-[11px] tracking-wider text-bone/40">
@@ -59,12 +59,12 @@ export function Hero() {
   );
 }
 
-function Stat({ label, value, unit }: { label: string; value: string; unit: string }) {
+function Stat({ label, value, unit }: { label: string; value: string; unit?: string }) {
   return (
     <div className="p-5 bg-navy-800/40">
       <p className="mono text-[10px] tracking-[0.25em] text-bone/40 uppercase">{label}</p>
       <p className="mt-2 font-display text-3xl text-gold-200">{value}</p>
-      <p className="mono text-[11px] text-bone/45 mt-1">{unit}</p>
+      {unit && <p className="mono text-[11px] text-bone/45 mt-1">{unit}</p>}
     </div>
   );
 }

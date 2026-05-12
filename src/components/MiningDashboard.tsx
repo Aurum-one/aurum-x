@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useAccount, useReadContract, useWaitForTransactionReceipt, useWriteContract } from "wagmi";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { AURX_ABI, AURX_ADDRESS, AURX_CHAIN_ID, TOKENOMICS } from "@/lib/contract";
-import { uint256ToHex32, useMiner, type MinerMode, type MinerState } from "@/hooks/useMiner";
+import { uint256ToHex32, useMiner, type MinerState } from "@/hooks/useMiner";
 import { formatDuration, formatHashRate, formatToken } from "@/lib/format";
 
 const ZERO_ADDR = "0x0000000000000000000000000000000000000000";
@@ -63,7 +63,6 @@ export function MiningDashboard() {
   // --- miner worker ---
   const { state, start, stop, reset } = useMiner();
   const [autoSubmit, setAutoSubmit] = useState(true);
-  const [minerMode, setMinerMode] = useState<MinerMode>("cpu");
 
   // --- claim tx ---
   const { writeContract, data: txHash, isPending: txSending, reset: resetTx } = useWriteContract();
@@ -117,7 +116,7 @@ export function MiningDashboard() {
       challenge: challenge as `0x${string}`,
       miner: address as `0x${string}`,
       target: uint256ToHex32(target as bigint),
-      mode: minerMode,
+      mode: "cpu",
     });
   }
 
@@ -181,10 +180,6 @@ export function MiningDashboard() {
             <EngineReadout state={state} />
 
             <div className="mt-6 flex flex-wrap items-center gap-3">
-              <div className="flex items-center gap-2">
-                <ModeButton mode="cpu" active={minerMode === "cpu"} disabled={isMining} onClick={setMinerMode} />
-                <ModeButton mode="gpu" active={minerMode === "gpu"} disabled={isMining} onClick={setMinerMode} />
-              </div>
               {!isMining && state.phase !== "found" && (
                 <button onClick={onStart} disabled={!canStart} className="btn-gold">
                   {canStart ? "Start mining" : "Awaiting wallet"}
@@ -286,33 +281,6 @@ export function MiningDashboard() {
         </div>
       </div>
     </section>
-  );
-}
-
-function ModeButton({
-  mode,
-  active,
-  disabled,
-  onClick,
-}: {
-  mode: MinerMode;
-  active: boolean;
-  disabled: boolean;
-  onClick: (mode: MinerMode) => void;
-}) {
-  return (
-    <button
-      type="button"
-      disabled={disabled}
-      onClick={() => onClick(mode)}
-      className={`px-3 py-2 rounded-lg border mono text-[11px] tracking-[0.2em] uppercase transition-colors ${
-        active
-          ? "border-gold-400/60 bg-gold-400/15 text-gold-200"
-          : "border-bone/10 bg-navy-800/30 text-bone/50 hover:text-bone"
-      } ${disabled ? "opacity-60 cursor-not-allowed" : ""}`}
-    >
-      {mode}
-    </button>
   );
 }
 

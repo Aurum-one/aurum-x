@@ -19,6 +19,7 @@ type StartMessage = {
   miner: string;     // 0x-prefixed 20-byte hex
   target: string;    // 0x-prefixed 32-byte hex (uint256, big-endian)
   startNonce?: string; // optional 0x-prefixed uint256
+  nonceStride?: string; // optional 0x-prefixed uint256
   reportEveryHashes?: number;
 };
 
@@ -88,6 +89,7 @@ function start(msg: StartMessage) {
     buf.set(miner, 32);
 
     let nonce = msg.startNonce ? BigInt(msg.startNonce) : 0n;
+    const nonceStride = msg.nonceStride ? BigInt(msg.nonceStride) : 1n;
     const reportEvery = msg.reportEveryHashes ?? 25_000;
 
     const t0 = performance.now();
@@ -115,7 +117,7 @@ function start(msg: StartMessage) {
       }
 
       hashes += 1;
-      nonce  += 1n;
+      nonce  += nonceStride;
 
       if (hashes % reportEvery === 0) {
         const now = performance.now();

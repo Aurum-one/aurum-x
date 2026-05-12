@@ -4,6 +4,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { AurumMark } from "./AurumMark";
+import { XIcon } from "./icons/XIcon";
+
+const TWITTER_URL = "https://x.com/Aurum_0x";
 
 const links: Array<{ href: string; label: string }> = [
   { href: "/",         label: "Overview" },
@@ -43,7 +46,16 @@ export function SiteNav() {
           })}
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
+          <a
+            href={TWITTER_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Aurum on X"
+            className="hidden sm:inline-flex items-center justify-center h-9 w-9 rounded-full border hairline text-bone/70 hover:text-gold-300 hover:border-gold-400/40 transition-colors"
+          >
+            <XIcon size={13} />
+          </a>
           <ConnectButton
             showBalance={false}
             chainStatus="icon"

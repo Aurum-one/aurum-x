@@ -1,5 +1,8 @@
 import Link from "next/link";
 import { AurumMark } from "./AurumMark";
+import { XIcon } from "./icons/XIcon";
+
+const TWITTER_URL = "https://x.com/Aurum_0x";
 
 export function SiteFooter() {
   return (
@@ -32,6 +35,21 @@ export function SiteFooter() {
             <li>ERC-20 · 18 decimals · capped 100M AURX</li>
             <li>On-chain PoW · no premine</li>
           </ul>
+          <div className="mt-5">
+            <p className="mono text-[10px] tracking-[0.3em] text-gold-400/70 mb-3">FOLLOW</p>
+            <a
+              href={TWITTER_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Aurum on X"
+              className="inline-flex items-center gap-2 text-bone/75 hover:text-gold-300 transition-colors"
+            >
+              <span className="inline-flex items-center justify-center h-7 w-7 rounded-full border hairline">
+                <XIcon size={12} />
+              </span>
+              <span className="mono text-[11px] tracking-wider">@Aurum_0x</span>
+            </a>
+          </div>
         </div>
       </div>
       <div className="border-t hairline">

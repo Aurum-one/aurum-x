@@ -29,6 +29,10 @@ export const metadata: Metadata = {
   description:
     "Aurum (AURX) is a proof-of-work mineable ERC-20 on Base. Mine the new gold with your CPU. Fixed 100 AURX per block, 1,000 AURX wallet cap, 100M supply.",
   metadataBase: new URL("https://aurum.gold"),
+  icons: {
+    icon: [{ url: "/aurum-mark.svg", type: "image/svg+xml" }],
+    shortcut: [{ url: "/aurum-mark.svg", type: "image/svg+xml" }],
+  },
   openGraph: {
     title: "Aurum — AURX",
     description: "Proof-of-Work, refined. Mineable ERC-20 on Base.",
@@ -38,6 +42,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Aurum — AURX",
     description: "Proof-of-Work, refined. Mineable ERC-20 on Base.",
+    site: "@Aurum_0x",
+    creator: "@Aurum_0x",
   },
 };
 

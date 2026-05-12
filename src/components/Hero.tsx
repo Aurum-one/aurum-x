@@ -20,8 +20,8 @@ export function Hero() {
 
         <p className="mt-6 text-lg sm:text-xl text-bone/70 max-w-2xl leading-relaxed">
           <span className="text-bone">Aurum (AURX)</span> is a fixed-supply, mineable ERC-20 on Base.
-          No presale. No airdrop. No inflation. The only way in is through work —
-          submit a nonce that beats the network target and the chain mints you
+          No presale. No airdrop. No inflation. Submit a nonce that beats the
+          network target and the chain mints you
           <span className="mono text-gold-300"> 100 AURX</span>.
         </p>
 

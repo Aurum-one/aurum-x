@@ -14,8 +14,7 @@ export function SiteFooter() {
             <span className="font-display text-lg tracking-[0.2em] text-bone">AURUM</span>
           </div>
           <p className="mt-3 text-bone/55 max-w-xs leading-relaxed">
-            Proof-of-Work, refined. A scarce, mineable ERC-20 on Base — no presale,
-            no airdrop, no inflation. The only way in is through work.
+            A mineable ERC-20 on Base. No presale, no airdrop, no inflation.
           </p>
         </div>
 

@@ -1,7 +1,7 @@
 const allocationRows: Array<{ name: string; share: string; note: string }> = [
   { name: "Mined emission", share: "100%",   note: "Issued only via on-chain PoW. No team or treasury allocation." },
   { name: "Premine",        share: "0%",     note: "There is no premine. Period." },
-  { name: "Team / advisors",share: "0%",     note: "Dev incentives are paid in ETH claim fees, not in AURX." },
+  { name: "Team / advisors",share: "0%",     note: "No team or advisor allocation." },
   { name: "Investors",      share: "0%",     note: "No private round. No public sale." },
 ];
 
@@ -51,14 +51,6 @@ export function Tokenomics() {
           </div>
         </div>
 
-        <div className="mt-6 card p-6 sm:p-8">
-          <p className="mono text-[10px] tracking-[0.3em] text-gold-400/80 mb-3">CLAIM FEE · 0.0001 ETH</p>
-          <p className="text-bone/75 leading-relaxed">
-            Every <code className="mono text-gold-300">mine()</code> call carries a fixed ETH fee
-            (default <span className="mono text-bone">0.0001 ETH</span>) that is forwarded in the same
-            transaction to the protocol&apos;s dev wallet.
-          </p>
-        </div>
       </div>
     </section>
   );

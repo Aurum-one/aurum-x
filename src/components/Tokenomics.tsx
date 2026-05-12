@@ -36,7 +36,6 @@ export function Tokenomics() {
               body={
                 <>
                   Each accepted nonce mints exactly <span className="mono text-gold-300">100 AURX</span> to the miner.
-                  No randomness, no slot machines — just deterministic proof-of-work.
                 </>
               }
             />
@@ -45,8 +44,7 @@ export function Tokenomics() {
               title="1,000 AURX max / wallet"
               body={
                 <>
-                  After ten successful mines a wallet retires from emission. This keeps the
-                  distribution wide and prevents single-actor capture of the supply.
+                  After ten successful mines a wallet retires from emission.
                 </>
               }
             />
@@ -58,8 +56,7 @@ export function Tokenomics() {
           <p className="text-bone/75 leading-relaxed">
             Every <code className="mono text-gold-300">mine()</code> call carries a fixed ETH fee
             (default <span className="mono text-bone">0.0001 ETH</span>) that is forwarded in the same
-            transaction to the protocol&apos;s dev wallet. This funds long-term maintenance — RPC, frontend
-            hosting, audits — without diluting AURX holders.
+            transaction to the protocol&apos;s dev wallet.
           </p>
         </div>
       </div>

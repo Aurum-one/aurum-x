@@ -9,7 +9,7 @@ const steps = [
   {
     n: "02",
     title: "Hash locally",
-    body: "Your browser hashes `keccak256(challenge ‖ your-address ‖ nonce)` in a Web Worker. The hot loop never leaves your CPU — no servers, no telemetry, no shadow pool.",
+    body: "Your browser hashes `keccak256(challenge ‖ your-address ‖ nonce)` in a Web Worker. The hot loop never leaves your CPU.",
   },
   {
     n: "03",
@@ -32,10 +32,6 @@ export function HowItWorks() {
           <h2 className="mt-3 font-display text-4xl sm:text-5xl tracking-tight text-bone">
             One loop. Four steps.
           </h2>
-          <p className="mt-3 text-bone/65 text-lg">
-            Aurum&apos;s mining is intentionally legible. Nothing is hidden behind oracles,
-            off-chain signers, or trusted relayers.
-          </p>
         </div>
 
         <ol className="mt-12 grid sm:grid-cols-2 gap-px hairline border rounded-xl overflow-hidden">

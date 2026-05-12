@@ -62,10 +62,6 @@ export function Roadmap() {
           <h2 className="mt-3 font-display text-4xl sm:text-5xl tracking-tight text-bone">
             From vein to reserve.
           </h2>
-          <p className="mt-3 text-bone/65 text-lg">
-            We don&apos;t ship hype. Each phase compounds on the previous one and
-            ships only when the prior phase is verifiably mined out.
-          </p>
         </div>
 
         <div className="mt-12 relative">

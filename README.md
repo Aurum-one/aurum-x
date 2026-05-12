@@ -17,7 +17,6 @@ block reward.
 | Max supply       | **100,000,000 AURX**               |
 | Block reward     | **100 AURX** per valid mine        |
 | Wallet cap       | **1,000 AURX** per wallet (lifetime) |
-| Claim fee        | **0.0001 ETH** per mine, routed to dev wallet |
 | Mining algorithm | `keccak256(challenge ‖ miner ‖ nonce) < target` |
 
 ---

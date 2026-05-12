@@ -31,7 +31,7 @@ export function SiteNav() {
         <nav className="hidden md:flex items-center gap-7 text-sm">
           {links.map((l) => {
             const active =
-              l.href === "/" ? pathname === "/" : pathname?.startsWith(l.href.replace(/#.*$/, ""));
+              l.href === "/" ? pathname === "/" : pathname === l.href.replace(/#.*$/, "");
             return (
               <Link
                 key={l.href}

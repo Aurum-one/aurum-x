@@ -5,7 +5,7 @@ import { useAccount, useReadContract, useWaitForTransactionReceipt, useWriteCont
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { AURX_ABI, AURX_ADDRESS, AURX_CHAIN_ID, TOKENOMICS } from "@/lib/contract";
 import { uint256ToHex32, useMiner, type MinerState } from "@/hooks/useMiner";
-import { formatDuration, formatEthFromWei, formatHashRate, formatToken } from "@/lib/format";
+import { formatDuration, formatHashRate, formatToken } from "@/lib/format";
 
 const ZERO_ADDR = "0x0000000000000000000000000000000000000000";
 
@@ -232,7 +232,6 @@ export function MiningDashboard() {
             <KV label="Wallet cap"     value={`${formatToken(TOKENOMICS.walletCap, 18, 0)} AURX`} />
             <Capacity mined={walletMined ?? 0n} />
             <KV label="AURX balance"   value={`${formatToken(balance ?? 0n)} AURX`} />
-            <KV label="Claim fee"      value={`${formatEthFromWei(claimFee ?? 0n)} ETH`} />
           </div>
 
           {/* --- Network card --- */}
@@ -402,4 +401,3 @@ function shorten(hex: string, head = 6, tail = 6) {
   if (hex.length <= head + tail + 2) return hex;
   return `${hex.slice(0, head + 2)}…${hex.slice(-tail)}`;
 }
-

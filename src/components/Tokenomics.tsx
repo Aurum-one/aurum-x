@@ -59,8 +59,7 @@ export function Tokenomics() {
             Every <code className="mono text-gold-300">mine()</code> call carries a fixed ETH fee
             (default <span className="mono text-bone">0.0001 ETH</span>) that is forwarded in the same
             transaction to the protocol&apos;s dev wallet. This funds long-term maintenance — RPC, frontend
-            hosting, audits — without diluting AURX holders. The fee is tunable by governance but the
-            <span className="text-bone"> supply cap and per-wallet cap are immutable.</span>
+            hosting, audits — without diluting AURX holders.
           </p>
         </div>
       </div>

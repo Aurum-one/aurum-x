@@ -1,0 +1,24 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <linearGradient id="aurum-bright" x1="0" y1="0" x2="64" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#F4E4BC"/>
+      <stop offset="50%"  stop-color="#E5C77E"/>
+      <stop offset="100%" stop-color="#A37A2E"/>
+    </linearGradient>
+    <linearGradient id="aurum-mid" x1="0" y1="0" x2="64" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#D4A85C"/>
+      <stop offset="100%" stop-color="#9B7128"/>
+    </linearGradient>
+    <linearGradient id="aurum-deep" x1="0" y1="0" x2="64" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#A37A2E"/>
+      <stop offset="100%" stop-color="#6B4D17"/>
+    </linearGradient>
+  </defs>
+  <g stroke-linejoin="miter" stroke-linecap="square">
+    <path d="M16 44 L32 38 L48 44 L48 50 L32 56 L16 50 Z" fill="url(#aurum-deep)" stroke="#6B4D17" stroke-width="1"/>
+    <path d="M12 32 L32 24 L52 32 L52 38 L32 46 L12 38 Z" fill="url(#aurum-mid)" stroke="#7A5A1F" stroke-width="1"/>
+    <path d="M10 20 L32 10 L54 20 L54 26 L32 36 L10 26 Z" fill="url(#aurum-bright)" stroke="#8C6826" stroke-width="1"/>
+    <path d="M10 20 L32 10 L54 20 L32 30 Z" fill="#F4E4BC" fill-opacity="0.35"/>
+    <path d="M32 10 L32 56" stroke="#6B4D17" stroke-width="0.6" stroke-opacity="0.5"/>
+  </g>
+</svg>

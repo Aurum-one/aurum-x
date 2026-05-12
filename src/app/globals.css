@@ -3,25 +3,116 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: dark;
+  --color-bg:      #070D17;
+  --color-bg-alt:  #0B1322;
+  --color-fg:      #EFE8DA;
+  --color-muted:   #8C9BB3;
+  --color-gold:    #D4A85C;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html, body {
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-feature-settings: "ss01", "cv11";
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-image:
+    radial-gradient(ellipse 80% 60% at 50% -10%, rgba(212,168,92,0.10), transparent 60%),
+    linear-gradient(180deg, #070D17 0%, #050911 100%);
+  background-attachment: fixed;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* Mono-rule fine grid backdrop used on hero sections. */
+.bg-aurum-grid {
+  background-image:
+    linear-gradient(to right, rgba(232,225,213,0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(232,225,213,0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  background-position: center;
+}
+
+.text-shimmer-gold {
+  background: linear-gradient(
+    90deg,
+    #C49142 0%,
+    #F4E4BC 30%,
+    #D4A85C 50%,
+    #F4E4BC 70%,
+    #C49142 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 8s linear infinite;
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.hairline {
+  border-color: rgba(232,225,213,0.08);
+}
+
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: #0B1322;
+  background: linear-gradient(180deg, #E9CE85 0%, #C49142 100%);
+  border: 1px solid rgba(212,168,92,0.45);
+  border-radius: 0.5rem;
+  box-shadow: 0 6px 18px -10px rgba(212,168,92,0.55), inset 0 1px 0 rgba(255,255,255,0.35);
+  transition: transform 120ms ease, box-shadow 120ms ease, filter 120ms ease;
+}
+.btn-gold:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}
+.btn-gold:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+  filter: grayscale(0.4);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: #EFE8DA;
+  border: 1px solid rgba(232,225,213,0.16);
+  border-radius: 0.5rem;
+  background: rgba(11,19,34,0.4);
+  transition: border-color 120ms ease, background 120ms ease;
+}
+.btn-ghost:hover {
+  border-color: rgba(212,168,92,0.45);
+  background: rgba(11,19,34,0.7);
+}
+
+.card {
+  background: linear-gradient(180deg, rgba(11,19,34,0.6) 0%, rgba(7,13,23,0.6) 100%);
+  border: 1px solid rgba(232,225,213,0.08);
+  border-radius: 0.875rem;
+  backdrop-filter: blur(6px);
+}
+
+.mono { font-family: var(--font-mono), ui-monospace, monospace; }
+
+::selection {
+  background: rgba(212,168,92,0.35);
+  color: #EFE8DA;
 }

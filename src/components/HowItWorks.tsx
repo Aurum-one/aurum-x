@@ -19,7 +19,7 @@ const steps = [
   {
     n: "04",
     title: "Claim on-chain",
-    body: "Submit the winning nonce via `mine(nonce)` with the 0.0001 ETH claim fee. The contract re-verifies the hash, mints you 100 AURX, rotates the challenge, and forwards the fee to the dev wallet — all atomically.",
+    body: "Submit the winning nonce via `mine(nonce)`. The contract re-verifies the hash, mints you 100 AURX, and rotates the challenge.",
   },
 ];
 

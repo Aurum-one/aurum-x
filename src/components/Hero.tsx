@@ -37,11 +37,10 @@ export function Hero() {
           </Link>
         </div>
 
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-px hairline border rounded-xl overflow-hidden">
+        <div className="mt-16 grid md:grid-cols-3 gap-px hairline border rounded-xl overflow-hidden">
           <Stat label="Max supply"    value="100,000,000" unit="AURX" />
           <Stat label="Block reward"  value="100" unit="AURX / block" />
           <Stat label="Wallet cap"    value="1,000" unit="AURX / wallet" />
-          <Stat label="Claim fee"     value="0.0001" />
         </div>
 
         <div className="mt-8 flex flex-wrap items-center gap-2 mono text-[11px] tracking-wider text-bone/40">
